@@ -1,0 +1,2236 @@
+{
+    "uid_repository": {
+        "1684728718": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 1684728718,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "m",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": true,
+                        "absolute": false
+                    }
+                }
+            }
+        },
+        "1815898423": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 1815898423,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "m",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "1153386304": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 1153386304,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "m",
+                    "subscript": null,
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 1815898423
+            }
+        },
+        "1517238231": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 1517238231,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "x",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "1176956795": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 1176956795,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "x",
+                    "subscript": null,
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 1517238231
+            }
+        },
+        "1096920720": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 1096920720,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Embedding",
+                "description": null,
+                "fill_color": "#FCE0E1"
+            }
+        },
+        "395933340": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 395933340,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "h",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "920120273": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 920120273,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "h",
+                    "subscript": null,
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 395933340
+            }
+        },
+        "1739374503": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 1739374503,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "k",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "836679810": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 836679810,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "k",
+                    "subscript": null,
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 1739374503
+            }
+        },
+        "2010384973": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 2010384973,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "k",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "1469419496": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 1469419496,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "k",
+                    "subscript": null,
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 2010384973
+            }
+        },
+        "1330868271": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 1330868271,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Attention Core",
+                "description": null,
+                "fill_color": "#C5BEDF"
+            }
+        },
+        "416612028": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 416612028,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Multi-Head Attention",
+                "description": null,
+                "fill_color": "#FFE2BB"
+            }
+        },
+        "605192963": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 605192963,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Add \\& Norm",
+                "description": null,
+                "fill_color": "#F1F4C1"
+            }
+        },
+        "103006383": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 103006383,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "d",
+                    "subscript": {
+                        "__type__": "DynamicName",
+                        "body": "ff",
+                        "subscript": null,
+                        "settings": null
+                    },
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": false,
+                        "absolute": true
+                    }
+                }
+            }
+        },
+        "941758498": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 941758498,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "d",
+                    "subscript": {
+                        "__type__": "DynamicName",
+                        "body": "ff",
+                        "subscript": null,
+                        "settings": null
+                    },
+                    "settings": null
+                }
+            },
+            "_size": {
+                "__ref__": 103006383
+            }
+        },
+        "28441216": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 28441216,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Feed Forward",
+                "description": null,
+                "fill_color": "#C1E8F7"
+            }
+        },
+        "975241444": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 975241444,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Add \\& Norm",
+                "description": null,
+                "fill_color": "#F1F4C1"
+            }
+        },
+        "1635102602": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 1635102602,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 6
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Transformer Layer",
+                "description": null,
+                "fill_color": "#F3F3F4"
+            }
+        },
+        "594970131": {
+            "__type__": "FreeNumeric",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "FreeNumeric"
+                },
+                "_id": 594970131,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "m",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": true,
+                        "absolute": false
+                    }
+                }
+            }
+        },
+        "200307492": {
+            "__type__": "RawAxis",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "RawAxis"
+                },
+                "_id": 200307492,
+                "_name": {
+                    "__type__": "DynamicName",
+                    "body": "m",
+                    "subscript": null,
+                    "settings": {
+                        "__type__": "DynamicNameSettings",
+                        "bold": false,
+                        "overline": true,
+                        "absolute": false
+                    }
+                }
+            },
+            "_size": {
+                "__ref__": 594970131
+            }
+        },
+        "1411594113": {
+            "__type__": "BlockTag",
+            "uid": {
+                "__type__": "UID",
+                "_type": {
+                    "__registered__": "type",
+                    "repr": "BlockTag"
+                },
+                "_id": 1411594113,
+                "_name": null
+            },
+            "repetition": {
+                "__type__": "Integer",
+                "_value": 1
+            },
+            "aesthetics": {
+                "__type__": "BlockAesthetics",
+                "title": "Aggregator",
+                "description": null,
+                "fill_color": "#DBDFEF"
+            }
+        }
+    },
+    "data": {
+        "__type__": "Composed",
+        "content": [
+            {
+                "__type__": "Block",
+                "body": {
+                    "__type__": "Broadcasted",
+                    "operator": {
+                        "__type__": "Embedding",
+                        "name": {
+                            "__type__": "DynamicName",
+                            "body": "E",
+                            "subscript": null,
+                            "settings": {
+                                "__type__": "DynamicNameSettings",
+                                "bold": true,
+                                "overline": false,
+                                "absolute": false
+                            }
+                        }
+                    },
+                    "input_weaves": [
+                        {
+                            "__type__": "Weave",
+                            "datatype": {
+                                "__type__": "Natural",
+                                "max_value": {
+                                    "__ref__": 1684728718
+                                }
+                            },
+                            "_shape": [
+                                {
+                                    "__registered__": "enum",
+                                    "type": "WeaveMode",
+                                    "name": "TILED"
+                                }
+                            ]
+                        }
+                    ],
+                    "output_weaves": [
+                        {
+                            "__type__": "Weave",
+                            "datatype": {
+                                "__type__": "Reals"
+                            },
+                            "_shape": [
+                                {
+                                    "__registered__": "enum",
+                                    "type": "WeaveMode",
+                                    "name": "TILED"
+                                },
+                                {
+                                    "__ref__": 1153386304
+                                }
+                            ]
+                        }
+                    ],
+                    "reindexings": [
+                        {
+                            "__type__": "Rearrangement",
+                            "mapping": [
+                                0
+                            ],
+                            "_dom": [
+                                {
+                                    "__ref__": 1176956795
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "block_tag": {
+                    "__ref__": 1096920720
+                }
+            },
+            {
+                "__type__": "Block",
+                "body": {
+                    "__type__": "Composed",
+                    "content": [
+                        {
+                            "__type__": "Block",
+                            "body": {
+                                "__type__": "Composed",
+                                "content": [
+                                    {
+                                        "__type__": "Rearrangement",
+                                        "mapping": [
+                                            0,
+                                            0
+                                        ],
+                                        "_dom": [
+                                            {
+                                                "__type__": "Array",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "ProductOfMorphisms",
+                                        "content": [
+                                            {
+                                                "__type__": "Composed",
+                                                "content": [
+                                                    {
+                                                        "__type__": "Rearrangement",
+                                                        "mapping": [
+                                                            0,
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "_dom": [
+                                                            {
+                                                                "__type__": "Array",
+                                                                "datatype": {
+                                                                    "__type__": "Reals"
+                                                                },
+                                                                "_shape": [
+                                                                    {
+                                                                        "__ref__": 1176956795
+                                                                    },
+                                                                    {
+                                                                        "__ref__": 1153386304
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "__type__": "Block",
+                                                        "body": {
+                                                            "__type__": "Composed",
+                                                            "content": [
+                                                                {
+                                                                    "__type__": "ProductOfMorphisms",
+                                                                    "content": [
+                                                                        {
+                                                                            "__type__": "Broadcasted",
+                                                                            "operator": {
+                                                                                "__type__": "Linear",
+                                                                                "name": {
+                                                                                    "__type__": "DynamicName",
+                                                                                    "body": "L",
+                                                                                    "subscript": {
+                                                                                        "__type__": "DynamicName",
+                                                                                        "body": "q",
+                                                                                        "subscript": null,
+                                                                                        "settings": null
+                                                                                    },
+                                                                                    "settings": {
+                                                                                        "__type__": "DynamicNameSettings",
+                                                                                        "bold": true,
+                                                                                        "overline": false,
+                                                                                        "absolute": false
+                                                                                    }
+                                                                                },
+                                                                                "bias": false
+                                                                            },
+                                                                            "input_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 1153386304
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "output_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 920120273
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 836679810
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "reindexings": [
+                                                                                {
+                                                                                    "__type__": "Rearrangement",
+                                                                                    "mapping": [
+                                                                                        0
+                                                                                    ],
+                                                                                    "_dom": [
+                                                                                        {
+                                                                                            "__ref__": 1176956795
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "__type__": "Broadcasted",
+                                                                            "operator": {
+                                                                                "__type__": "Linear",
+                                                                                "name": {
+                                                                                    "__type__": "DynamicName",
+                                                                                    "body": "L",
+                                                                                    "subscript": {
+                                                                                        "__type__": "DynamicName",
+                                                                                        "body": "k",
+                                                                                        "subscript": null,
+                                                                                        "settings": null
+                                                                                    },
+                                                                                    "settings": {
+                                                                                        "__type__": "DynamicNameSettings",
+                                                                                        "bold": true,
+                                                                                        "overline": false,
+                                                                                        "absolute": false
+                                                                                    }
+                                                                                },
+                                                                                "bias": false
+                                                                            },
+                                                                            "input_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 1153386304
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "output_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 920120273
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 836679810
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "reindexings": [
+                                                                                {
+                                                                                    "__type__": "Rearrangement",
+                                                                                    "mapping": [
+                                                                                        0
+                                                                                    ],
+                                                                                    "_dom": [
+                                                                                        {
+                                                                                            "__ref__": 1176956795
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "__type__": "Broadcasted",
+                                                                            "operator": {
+                                                                                "__type__": "Linear",
+                                                                                "name": {
+                                                                                    "__type__": "DynamicName",
+                                                                                    "body": "L",
+                                                                                    "subscript": {
+                                                                                        "__type__": "DynamicName",
+                                                                                        "body": "v",
+                                                                                        "subscript": null,
+                                                                                        "settings": null
+                                                                                    },
+                                                                                    "settings": {
+                                                                                        "__type__": "DynamicNameSettings",
+                                                                                        "bold": true,
+                                                                                        "overline": false,
+                                                                                        "absolute": false
+                                                                                    }
+                                                                                },
+                                                                                "bias": false
+                                                                            },
+                                                                            "input_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 1153386304
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "output_weaves": [
+                                                                                {
+                                                                                    "__type__": "Weave",
+                                                                                    "datatype": {
+                                                                                        "__type__": "Reals"
+                                                                                    },
+                                                                                    "_shape": [
+                                                                                        {
+                                                                                            "__registered__": "enum",
+                                                                                            "type": "WeaveMode",
+                                                                                            "name": "TILED"
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 920120273
+                                                                                        },
+                                                                                        {
+                                                                                            "__ref__": 1469419496
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "reindexings": [
+                                                                                {
+                                                                                    "__type__": "Rearrangement",
+                                                                                    "mapping": [
+                                                                                        0
+                                                                                    ],
+                                                                                    "_dom": [
+                                                                                        {
+                                                                                            "__ref__": 1176956795
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "__type__": "Block",
+                                                                    "body": {
+                                                                        "__type__": "Composed",
+                                                                        "content": [
+                                                                            {
+                                                                                "__type__": "ProductOfMorphisms",
+                                                                                "content": [
+                                                                                    {
+                                                                                        "__type__": "Composed",
+                                                                                        "content": [
+                                                                                            {
+                                                                                                "__type__": "Broadcasted",
+                                                                                                "operator": {
+                                                                                                    "__type__": "Einops",
+                                                                                                    "name": {
+                                                                                                        "__type__": "DynamicName",
+                                                                                                        "body": "q h k, x h k -> h q x",
+                                                                                                        "subscript": null,
+                                                                                                        "settings": null
+                                                                                                    },
+                                                                                                    "signature": [
+                                                                                                        [
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        [
+                                                                                                            0
+                                                                                                        ]
+                                                                                                    ]
+                                                                                                },
+                                                                                                "input_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 836679810
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 836679810
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "output_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "reindexings": [
+                                                                                                    {
+                                                                                                        "__type__": "Rearrangement",
+                                                                                                        "mapping": [
+                                                                                                            1,
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        "_dom": [
+                                                                                                            {
+                                                                                                                "__ref__": 920120273
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "__type__": "Rearrangement",
+                                                                                                        "mapping": [
+                                                                                                            2,
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        "_dom": [
+                                                                                                            {
+                                                                                                                "__ref__": 920120273
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            },
+                                                                                            {
+                                                                                                "__type__": "Broadcasted",
+                                                                                                "operator": {
+                                                                                                    "__type__": "SoftMax",
+                                                                                                    "name": {
+                                                                                                        "__type__": "DynamicName",
+                                                                                                        "body": "SoftMax",
+                                                                                                        "subscript": null,
+                                                                                                        "settings": null
+                                                                                                    },
+                                                                                                    "contracted": false
+                                                                                                },
+                                                                                                "input_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "output_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "reindexings": [
+                                                                                                    {
+                                                                                                        "__type__": "Rearrangement",
+                                                                                                        "mapping": [
+                                                                                                            0,
+                                                                                                            1
+                                                                                                        ],
+                                                                                                        "_dom": [
+                                                                                                            {
+                                                                                                                "__ref__": 920120273
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            },
+                                                                                            {
+                                                                                                "__type__": "Broadcasted",
+                                                                                                "operator": {
+                                                                                                    "__type__": "WeightedTriangularLower",
+                                                                                                    "name": {
+                                                                                                        "__type__": "DynamicName",
+                                                                                                        "body": "wtril",
+                                                                                                        "subscript": null,
+                                                                                                        "settings": null
+                                                                                                    }
+                                                                                                },
+                                                                                                "input_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "output_weaves": [
+                                                                                                    {
+                                                                                                        "__type__": "Weave",
+                                                                                                        "datatype": {
+                                                                                                            "__type__": "Reals"
+                                                                                                        },
+                                                                                                        "_shape": [
+                                                                                                            {
+                                                                                                                "__registered__": "enum",
+                                                                                                                "type": "WeaveMode",
+                                                                                                                "name": "TILED"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "__ref__": 1176956795
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ],
+                                                                                                "reindexings": [
+                                                                                                    {
+                                                                                                        "__type__": "Rearrangement",
+                                                                                                        "mapping": [
+                                                                                                            0
+                                                                                                        ],
+                                                                                                        "_dom": [
+                                                                                                            {
+                                                                                                                "__ref__": 920120273
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "__type__": "Rearrangement",
+                                                                                        "mapping": [
+                                                                                            0
+                                                                                        ],
+                                                                                        "_dom": [
+                                                                                            {
+                                                                                                "__type__": "Array",
+                                                                                                "datatype": {
+                                                                                                    "__type__": "Reals"
+                                                                                                },
+                                                                                                "_shape": [
+                                                                                                    {
+                                                                                                        "__ref__": 1176956795
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "__ref__": 920120273
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "__ref__": 1469419496
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "__type__": "Broadcasted",
+                                                                                "operator": {
+                                                                                    "__type__": "Einops",
+                                                                                    "name": {
+                                                                                        "__type__": "DynamicName",
+                                                                                        "body": "h q x, x h k -> q h k",
+                                                                                        "subscript": null,
+                                                                                        "settings": null
+                                                                                    },
+                                                                                    "signature": [
+                                                                                        [
+                                                                                            0
+                                                                                        ],
+                                                                                        [
+                                                                                            0
+                                                                                        ]
+                                                                                    ]
+                                                                                },
+                                                                                "input_weaves": [
+                                                                                    {
+                                                                                        "__type__": "Weave",
+                                                                                        "datatype": {
+                                                                                            "__type__": "Reals"
+                                                                                        },
+                                                                                        "_shape": [
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            },
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            },
+                                                                                            {
+                                                                                                "__ref__": 1176956795
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "__type__": "Weave",
+                                                                                        "datatype": {
+                                                                                            "__type__": "Reals"
+                                                                                        },
+                                                                                        "_shape": [
+                                                                                            {
+                                                                                                "__ref__": 1176956795
+                                                                                            },
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            },
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "output_weaves": [
+                                                                                    {
+                                                                                        "__type__": "Weave",
+                                                                                        "datatype": {
+                                                                                            "__type__": "Reals"
+                                                                                        },
+                                                                                        "_shape": [
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            },
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            },
+                                                                                            {
+                                                                                                "__registered__": "enum",
+                                                                                                "type": "WeaveMode",
+                                                                                                "name": "TILED"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "reindexings": [
+                                                                                    {
+                                                                                        "__type__": "Rearrangement",
+                                                                                        "mapping": [
+                                                                                            1,
+                                                                                            0
+                                                                                        ],
+                                                                                        "_dom": [
+                                                                                            {
+                                                                                                "__ref__": 1176956795
+                                                                                            },
+                                                                                            {
+                                                                                                "__ref__": 920120273
+                                                                                            },
+                                                                                            {
+                                                                                                "__ref__": 1469419496
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "__type__": "Rearrangement",
+                                                                                        "mapping": [
+                                                                                            1,
+                                                                                            2
+                                                                                        ],
+                                                                                        "_dom": [
+                                                                                            {
+                                                                                                "__ref__": 1176956795
+                                                                                            },
+                                                                                            {
+                                                                                                "__ref__": 920120273
+                                                                                            },
+                                                                                            {
+                                                                                                "__ref__": 1469419496
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "block_tag": {
+                                                                        "__ref__": 1330868271
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "__type__": "Broadcasted",
+                                                                    "operator": {
+                                                                        "__type__": "Linear",
+                                                                        "name": {
+                                                                            "__type__": "DynamicName",
+                                                                            "body": "L",
+                                                                            "subscript": {
+                                                                                "__type__": "DynamicName",
+                                                                                "body": "o",
+                                                                                "subscript": null,
+                                                                                "settings": null
+                                                                            },
+                                                                            "settings": {
+                                                                                "__type__": "DynamicNameSettings",
+                                                                                "bold": true,
+                                                                                "overline": false,
+                                                                                "absolute": false
+                                                                            }
+                                                                        },
+                                                                        "bias": false
+                                                                    },
+                                                                    "input_weaves": [
+                                                                        {
+                                                                            "__type__": "Weave",
+                                                                            "datatype": {
+                                                                                "__type__": "Reals"
+                                                                            },
+                                                                            "_shape": [
+                                                                                {
+                                                                                    "__registered__": "enum",
+                                                                                    "type": "WeaveMode",
+                                                                                    "name": "TILED"
+                                                                                },
+                                                                                {
+                                                                                    "__ref__": 920120273
+                                                                                },
+                                                                                {
+                                                                                    "__ref__": 1469419496
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "output_weaves": [
+                                                                        {
+                                                                            "__type__": "Weave",
+                                                                            "datatype": {
+                                                                                "__type__": "Reals"
+                                                                            },
+                                                                            "_shape": [
+                                                                                {
+                                                                                    "__registered__": "enum",
+                                                                                    "type": "WeaveMode",
+                                                                                    "name": "TILED"
+                                                                                },
+                                                                                {
+                                                                                    "__ref__": 1153386304
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "reindexings": [
+                                                                        {
+                                                                            "__type__": "Rearrangement",
+                                                                            "mapping": [
+                                                                                0
+                                                                            ],
+                                                                            "_dom": [
+                                                                                {
+                                                                                    "__ref__": 1176956795
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        "block_tag": {
+                                                            "__ref__": 416612028
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__type__": "Array",
+                                                        "datatype": {
+                                                            "__type__": "Reals"
+                                                        },
+                                                        "_shape": [
+                                                            {
+                                                                "__ref__": 1176956795
+                                                            },
+                                                            {
+                                                                "__ref__": 1153386304
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "Broadcasted",
+                                        "operator": {
+                                            "__type__": "AdditionOp",
+                                            "name": {
+                                                "__type__": "DynamicName",
+                                                "body": "+",
+                                                "subscript": null,
+                                                "settings": null
+                                            }
+                                        },
+                                        "input_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "output_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "reindexings": [
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0,
+                                                    1
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0,
+                                                    1
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "Broadcasted",
+                                        "operator": {
+                                            "__type__": "Normalize",
+                                            "name": {
+                                                "__type__": "DynamicName",
+                                                "body": "RMSNorm",
+                                                "subscript": null,
+                                                "settings": null
+                                            }
+                                        },
+                                        "input_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "output_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "reindexings": [
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "block_tag": {
+                                "__ref__": 605192963
+                            }
+                        },
+                        {
+                            "__type__": "Block",
+                            "body": {
+                                "__type__": "Composed",
+                                "content": [
+                                    {
+                                        "__type__": "Rearrangement",
+                                        "mapping": [
+                                            0,
+                                            0
+                                        ],
+                                        "_dom": [
+                                            {
+                                                "__type__": "Array",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "ProductOfMorphisms",
+                                        "content": [
+                                            {
+                                                "__type__": "Block",
+                                                "body": {
+                                                    "__type__": "Composed",
+                                                    "content": [
+                                                        {
+                                                            "__type__": "Broadcasted",
+                                                            "operator": {
+                                                                "__type__": "Linear",
+                                                                "name": {
+                                                                    "__type__": "DynamicName",
+                                                                    "body": "L",
+                                                                    "subscript": {
+                                                                        "__type__": "DynamicName",
+                                                                        "body": "in",
+                                                                        "subscript": null,
+                                                                        "settings": null
+                                                                    },
+                                                                    "settings": {
+                                                                        "__type__": "DynamicNameSettings",
+                                                                        "bold": true,
+                                                                        "overline": false,
+                                                                        "absolute": false
+                                                                    }
+                                                                },
+                                                                "bias": false
+                                                            },
+                                                            "input_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__ref__": 1153386304
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "output_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__ref__": 941758498
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "reindexings": [
+                                                                {
+                                                                    "__type__": "Rearrangement",
+                                                                    "mapping": [
+                                                                        0
+                                                                    ],
+                                                                    "_dom": [
+                                                                        {
+                                                                            "__ref__": 1176956795
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "__type__": "Broadcasted",
+                                                            "operator": {
+                                                                "__type__": "Elementwise",
+                                                                "name": {
+                                                                    "__type__": "DynamicName",
+                                                                    "body": "\\sigma",
+                                                                    "subscript": null,
+                                                                    "settings": null
+                                                                },
+                                                                "operator": "sigmoid"
+                                                            },
+                                                            "input_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "output_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "reindexings": [
+                                                                {
+                                                                    "__type__": "ProductOfMorphisms",
+                                                                    "content": [
+                                                                        {
+                                                                            "__type__": "Rearrangement",
+                                                                            "mapping": [
+                                                                                0
+                                                                            ],
+                                                                            "_dom": [
+                                                                                {
+                                                                                    "__ref__": 1176956795
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "__type__": "Rearrangement",
+                                                                            "mapping": [
+                                                                                0
+                                                                            ],
+                                                                            "_dom": [
+                                                                                {
+                                                                                    "__ref__": 941758498
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "__type__": "Broadcasted",
+                                                            "operator": {
+                                                                "__type__": "Linear",
+                                                                "name": {
+                                                                    "__type__": "DynamicName",
+                                                                    "body": "L",
+                                                                    "subscript": {
+                                                                        "__type__": "DynamicName",
+                                                                        "body": "out",
+                                                                        "subscript": null,
+                                                                        "settings": null
+                                                                    },
+                                                                    "settings": {
+                                                                        "__type__": "DynamicNameSettings",
+                                                                        "bold": true,
+                                                                        "overline": false,
+                                                                        "absolute": false
+                                                                    }
+                                                                },
+                                                                "bias": false
+                                                            },
+                                                            "input_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__ref__": 941758498
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "output_weaves": [
+                                                                {
+                                                                    "__type__": "Weave",
+                                                                    "datatype": {
+                                                                        "__type__": "Reals"
+                                                                    },
+                                                                    "_shape": [
+                                                                        {
+                                                                            "__registered__": "enum",
+                                                                            "type": "WeaveMode",
+                                                                            "name": "TILED"
+                                                                        },
+                                                                        {
+                                                                            "__ref__": 1153386304
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "reindexings": [
+                                                                {
+                                                                    "__type__": "Rearrangement",
+                                                                    "mapping": [
+                                                                        0
+                                                                    ],
+                                                                    "_dom": [
+                                                                        {
+                                                                            "__ref__": 1176956795
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                "block_tag": {
+                                                    "__ref__": 28441216
+                                                }
+                                            },
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__type__": "Array",
+                                                        "datatype": {
+                                                            "__type__": "Reals"
+                                                        },
+                                                        "_shape": [
+                                                            {
+                                                                "__ref__": 1176956795
+                                                            },
+                                                            {
+                                                                "__ref__": 1153386304
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "Broadcasted",
+                                        "operator": {
+                                            "__type__": "AdditionOp",
+                                            "name": {
+                                                "__type__": "DynamicName",
+                                                "body": "+",
+                                                "subscript": null,
+                                                "settings": null
+                                            }
+                                        },
+                                        "input_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "output_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "reindexings": [
+                                            {
+                                                "__type__": "ProductOfMorphisms",
+                                                "content": [
+                                                    {
+                                                        "__type__": "Rearrangement",
+                                                        "mapping": [
+                                                            0
+                                                        ],
+                                                        "_dom": [
+                                                            {
+                                                                "__ref__": 1176956795
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "__type__": "Rearrangement",
+                                                        "mapping": [
+                                                            0
+                                                        ],
+                                                        "_dom": [
+                                                            {
+                                                                "__ref__": 1153386304
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "__type__": "ProductOfMorphisms",
+                                                "content": [
+                                                    {
+                                                        "__type__": "Rearrangement",
+                                                        "mapping": [
+                                                            0
+                                                        ],
+                                                        "_dom": [
+                                                            {
+                                                                "__ref__": 1176956795
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "__type__": "Rearrangement",
+                                                        "mapping": [
+                                                            0
+                                                        ],
+                                                        "_dom": [
+                                                            {
+                                                                "__ref__": 1153386304
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__type__": "Broadcasted",
+                                        "operator": {
+                                            "__type__": "Normalize",
+                                            "name": {
+                                                "__type__": "DynamicName",
+                                                "body": "RMSNorm",
+                                                "subscript": null,
+                                                "settings": null
+                                            }
+                                        },
+                                        "input_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "output_weaves": [
+                                            {
+                                                "__type__": "Weave",
+                                                "datatype": {
+                                                    "__type__": "Reals"
+                                                },
+                                                "_shape": [
+                                                    {
+                                                        "__registered__": "enum",
+                                                        "type": "WeaveMode",
+                                                        "name": "TILED"
+                                                    },
+                                                    {
+                                                        "__ref__": 1153386304
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "reindexings": [
+                                            {
+                                                "__type__": "Rearrangement",
+                                                "mapping": [
+                                                    0
+                                                ],
+                                                "_dom": [
+                                                    {
+                                                        "__ref__": 1176956795
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "block_tag": {
+                                "__ref__": 975241444
+                            }
+                        }
+                    ]
+                },
+                "block_tag": {
+                    "__ref__": 1635102602
+                }
+            },
+            {
+                "__type__": "Block",
+                "body": {
+                    "__type__": "Composed",
+                    "content": [
+                        {
+                            "__type__": "Broadcasted",
+                            "operator": {
+                                "__type__": "Linear",
+                                "name": {
+                                    "__type__": "DynamicName",
+                                    "body": "L",
+                                    "subscript": null,
+                                    "settings": {
+                                        "__type__": "DynamicNameSettings",
+                                        "bold": true,
+                                        "overline": false,
+                                        "absolute": false
+                                    }
+                                },
+                                "bias": false
+                            },
+                            "input_weaves": [
+                                {
+                                    "__type__": "Weave",
+                                    "datatype": {
+                                        "__type__": "Reals"
+                                    },
+                                    "_shape": [
+                                        {
+                                            "__registered__": "enum",
+                                            "type": "WeaveMode",
+                                            "name": "TILED"
+                                        },
+                                        {
+                                            "__ref__": 1153386304
+                                        }
+                                    ]
+                                }
+                            ],
+                            "output_weaves": [
+                                {
+                                    "__type__": "Weave",
+                                    "datatype": {
+                                        "__type__": "Reals"
+                                    },
+                                    "_shape": [
+                                        {
+                                            "__registered__": "enum",
+                                            "type": "WeaveMode",
+                                            "name": "TILED"
+                                        },
+                                        {
+                                            "__ref__": 200307492
+                                        }
+                                    ]
+                                }
+                            ],
+                            "reindexings": [
+                                {
+                                    "__type__": "Rearrangement",
+                                    "mapping": [
+                                        0
+                                    ],
+                                    "_dom": [
+                                        {
+                                            "__ref__": 1176956795
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "__type__": "Broadcasted",
+                            "operator": {
+                                "__type__": "SoftMax",
+                                "name": {
+                                    "__type__": "DynamicName",
+                                    "body": "SoftMax",
+                                    "subscript": null,
+                                    "settings": null
+                                },
+                                "contracted": false
+                            },
+                            "input_weaves": [
+                                {
+                                    "__type__": "Weave",
+                                    "datatype": {
+                                        "__type__": "Reals"
+                                    },
+                                    "_shape": [
+                                        {
+                                            "__registered__": "enum",
+                                            "type": "WeaveMode",
+                                            "name": "TILED"
+                                        },
+                                        {
+                                            "__ref__": 200307492
+                                        }
+                                    ]
+                                }
+                            ],
+                            "output_weaves": [
+                                {
+                                    "__type__": "Weave",
+                                    "datatype": {
+                                        "__type__": "Reals"
+                                    },
+                                    "_shape": [
+                                        {
+                                            "__registered__": "enum",
+                                            "type": "WeaveMode",
+                                            "name": "TILED"
+                                        },
+                                        {
+                                            "__ref__": 200307492
+                                        }
+                                    ]
+                                }
+                            ],
+                            "reindexings": [
+                                {
+                                    "__type__": "Rearrangement",
+                                    "mapping": [
+                                        0
+                                    ],
+                                    "_dom": [
+                                        {
+                                            "__ref__": 1176956795
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "block_tag": {
+                    "__ref__": 1411594113
+                }
+            }
+        ]
+    }
+}
