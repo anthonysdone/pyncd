@@ -66,5 +66,5 @@ def kernel_functor[S:fd.Term](kernel: Kernel, target: S) -> S:
             if meet_kernel == SpecialKernel.MAIN:
                 return form
             return target.reconstruct(kernel=meet_kernel)
-    return fd.deep_iterate(target, lambda t: kernel_functor(kernel, t))
+    return fd.deep_reconstruct(target, lambda t: kernel_functor(kernel, t))
     

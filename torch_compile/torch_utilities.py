@@ -33,6 +33,7 @@ class Weights(nn.Module):
             fan_in, _ = nn.init._calculate_fan_in_and_fan_out(self.weight)
             bound = 1 / math.sqrt(fan_in) if fan_in > 0 else 0
             nn.init.uniform_(self.bias, -bound, bound)
+            
     def __repr__(self):
         return f'{type(self).__qualname__}(size={self.size})'
 
@@ -68,7 +69,6 @@ class Multilinear(nn.Module):
         if self.bias:
             x_out += self.weights.bias
         return x_out
-    def __repr__(self):
-        sup = super().__repr__()
-        location = sup.find('(')
-        return sup[:location] + f'({self.in_size} -> {self.out_size},' + sup[location + 1:]
+    
+    def extra_repr(self) -> str:
+        return f'{self.in_size} -> {self.out_size}{', bias={self.bias}' if self.bias else ''}'

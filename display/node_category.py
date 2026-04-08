@@ -1,4 +1,5 @@
 import data_structure.Category as cat
+import data_structure.Numeric as nm
 import data_structure.Term as fd
 import display.Box as Box
 import utilities.utilities as util
@@ -23,6 +24,8 @@ def display_uterm(
 def display_axis(
     axis: cat.Axis
 ) -> Box.Box:
+    if isinstance(axis._size, nm.Integer):
+        return Box.TextBox(f'{axis._size._value}')
     return display_uterm(axis)
 
 def display_long_axis(

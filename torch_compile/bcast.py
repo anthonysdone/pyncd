@@ -43,19 +43,6 @@ def is_semantically_broadcastable(target: cat.Broadcasted) -> bool:
         )
     )
 
-# def semantic_broadcast(target: cat.Broadcasted):
-#     assert is_semantically_broadcastable(target)
-#     # Figures out where to add ones to the expression
-#     degree_size = len(target.degree())
-#     return tuple(
-#         unsqueeze_guide(
-#             degree_size,
-#             tutil.get_mapping(eta),
-#             target.input_weaves
-#         )
-#         for eta in target.reindexings
-#     )
-
 
 ##########
 ## DIMS ##

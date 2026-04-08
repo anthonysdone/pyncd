@@ -2,23 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import (
     Any,
-    Self,
     Type,
-    TypeVar,
     Callable,
-    Iterable,
-    overload,
-    Sequence,
-    Iterable,
 )
-import random
 import math
 from abc import ABC
-from enum import Enum
 
 import data_structure.Term as fd # for 'foundations'
 import data_structure.Numeric as nm
-import utilities.utilities as util
 import term_utilities.term_utilities as tutil
 import data_structure.Category as cat
 import data_structure.Operators as ops
@@ -32,32 +23,11 @@ import einops
 import torch_compile.bcast as bcast
 import torch_compile.torch_utilities as torch_utilities
 
-@dataclass
-class BroadcastedCompile:
-    name: str
-    init_code: str
-    forward_code: str
-
-
-
-
-
-# def torch_compile(target: cat.BroadcastedCategory):
-#     match target:
-#         case cat.ProductOfMorphisms():
-#             return ConstructedProduct(target)
-#         case cat.Composed():
-#             return ConstructedCompose(target)
-#         case cat.Broadcasted():
-#             return ConstructedModule.construct(target)
-        
-
-
-
 @dataclass(frozen=True)
 class TorchFunctionInfo:
-    dim: bool = False
+    explicit_dim: bool = False
     semantic: bool = False
+    implicit_lower: bool = True
 
 class ConstructedModule[M: cat.Morphism](nn.Module, ABC):
     operation_registry: dict[Type[cat.Operator], Type[ConstructedModule]] = {}
@@ -103,7 +73,7 @@ class ConstructedModule[M: cat.Morphism](nn.Module, ABC):
         ConstructedModule.functions_registry[func_type] = (
             func,
             TorchFunctionInfo(
-                dim = dim,
+                explicit_dim = dim,
                 semantic = semantic
             )
         )
@@ -139,9 +109,9 @@ class ConstructedBlock[B: cat.Datatype, A: cat.Axis](
 ):
     def __init__(self, target: Br.Block[B, A]):
         super().__init__(target)
-        if target.block_tag.repetition._value > 1:
+        if isinstance(repetition := target.block_tag.repetition, nm.Integer) and repetition._value > 1:
             self.module = nn.Sequential(
-                *(ConstructedModule.construct(target.body) for _ in range(target.block_tag.repetition._value))
+                *(ConstructedModule.construct(target.body) for _ in range(repetition._value))
             )
         else:
             self.module = ConstructedModule.construct(target.body)
@@ -153,9 +123,6 @@ class ConstructedBlock[B: cat.Datatype, A: cat.Axis](
             return xs
         else:
             return self.module(*xs)
-    
-    # def __repr__(self):
-    #     return f'{type(self).__qualname__}({self.target.body})'
     
 class ConstructedProduct[B: cat.Datatype, A: cat.Axis](
     ConstructedModule[Br.ProductOfMorphisms[B, A]]
@@ -188,29 +155,33 @@ class ConstructedComposed[B: cat.Datatype, A: cat.Axis](
         for module in self.chain:
             xs = to_tuple(module(*xs))
         return xs
+    
+class ConstructedRearrangement(ConstructedModule):
+    def __init__(self, target: cat.Rearrangement):
+        super().__init__(target)
+
+    def forward(self, *xs: torch.Tensor):
+        return self.target.apply(xs)
 
 ##################
 ## BROADCASTING ##
 ##################
-
-## All 'funcs' are assumed to be batch-broadcasted.
-# Therefore, we cleave off the batch aspect of Broadcasted morphisms.
-# If we're lucky, this is enough.
-# Otherwise, we then three possible modes:
-#  - 'dim', fed as a kwarg for the target dimension. The dim is negative, fed from the right.
-#  - 'semantic', where we reshape the input tensors to have ones in the right places, and rely on broadcasting semantics to do the rest.
-#  - 'vmap', where we use sequential vmapping to generate the needed shape.
 
 def broadcast_func(
         target: cat.Broadcasted, 
         func: Callable,
         broadcast_info: TorchFunctionInfo = TorchFunctionInfo()):
     
+    assert tutil.is_mappable_broadcast(target)
+    # For now, we just use Einops
+    displacement = bcast.get_displacement(target)
     match broadcast_info:
-        case TorchFunctionInfo(dim=True) if (dim := bcast.get_displacement(target)) is not None:
+        case TorchFunctionInfo(explicit_dim=True) if displacement is not None:
             def dim_func(*xs: torch.Tensor, **kwargs: Any):
-                return func(*xs, **kwargs, dim=dim)
+                return func(*xs, **kwargs, dim=displacement)
             return dim_func
+        case TorchFunctionInfo(implicit_lower=True) if displacement == -1:
+            return func
         case TorchFunctionInfo(semantic=True) if bcast.is_semantically_broadcastable(target):
             degree_size = len(target.degree())
             if all(tutil.is_identity(eta) for eta in target.reindexings):
@@ -239,6 +210,9 @@ def broadcast_func(
 ## OPERATIONS ##
 ################
 
+############
+## STATIC ##
+############
 
 def generate_einops_signature(target: cat.Broadcasted[Any, Any, ops.Einops]):
     assert tutil.is_mappable_broadcast(target)
@@ -267,7 +241,6 @@ def generate_einops_signature(target: cat.Broadcasted[Any, Any, ops.Einops]):
     output_signature = ' '.join(degree_tags)
     return f'{input_signature} -> ... {output_signature}'
 
-
 class ConstructedEinops[B: cat.Datatype, A: cat.Axis](
     ConstructedModule[cat.Broadcasted[B, A, ops.Einops]],
     operation_key=ops.Einops
@@ -279,6 +252,7 @@ class ConstructedEinops[B: cat.Datatype, A: cat.Axis](
     def forward(self, *xs: torch.Tensor):
         return einops.einsum(*xs, self.signature) # type: ignore
     
+
 ConstructedModule.add_function(ops.SoftMax, torch.softmax, dim=True)
 ConstructedModule.add_function(ops.AdditionOp, lambda x, y: x + y, semantic=True)
 ConstructedModule.add_function(ops.Elementwise, torch.relu)
@@ -289,6 +263,9 @@ def weighted_triangular_lower(x: torch.Tensor) -> torch.Tensor:
 
 ConstructedModule.add_function(ops.WeightedTriangularLower, weighted_triangular_lower)
 
+#############
+## LEARNED ##
+#############
 class ConstructedLinear[
     B: cat.Datatype, A: cat.Axis
 ](ConstructedModule, operation_key=ops.Linear):
@@ -307,7 +284,9 @@ class ConstructedLinear[
         self.module = torch_utilities.Multilinear(
             self.in_size, self.out_size, self.bias
         )
-        self.func = broadcast_func(target, self.module.forward)
+        self.func = broadcast_func(
+            target, 
+            self.module.forward)
 
     def forward(self, *xs):
         return self.func(*xs)
@@ -326,26 +305,22 @@ class ConstructedEmbedding[
                 self.dims = tuple(y.local_size()._value for y in weave_out.target().shape()) # type: ignore
             case _:
                 assert False
+            
         self.module = torch.nn.Embedding(
             self.num_embeddings, math.prod(self.dims)
         )
+
         def func(*xs):
             x = xs[0]
             original_shape = x.shape
             x = x.view(-1)
             embedded = self.module(x)
             return embedded.view(*original_shape, *self.dims)
+        
         self.func = broadcast_func(target, func)
     
     def forward(self, *xs):
         return self.func(*xs)
-    
-class ConstructedRearrangement(ConstructedModule):
-    def __init__(self, target: cat.Rearrangement):
-        super().__init__(target)
-
-    def forward(self, *xs: torch.Tensor):
-        return self.target.apply(xs)
     
 class ConstructedNorm[B: cat.Datatype, A: cat.Axis](ConstructedModule, operation_key=ops.Normalize):
     def __init__(self, target: cat.Broadcasted[B, A, ops.Normalize]):

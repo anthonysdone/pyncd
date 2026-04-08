@@ -6,6 +6,7 @@ from typing import (
 )
 from enum import Enum
 
+type Prod[T] = tuple[T, ...]
 class AllEqualsFallback(Enum):
     RAISE = 'RAISE'
 
@@ -53,3 +54,30 @@ def unique_iterable[T](target: Iterable[T]) -> Iterator[T]:
         if item not in seen:
             seen.add(item)
             yield item
+
+def deconcatenate(target: Prod[int], dom_length: int | None = None) -> Prod[tuple[int, int]]:
+    dom_length = dom_length or max(target) + 1
+    return tuple(
+        (L0, R0)
+        for L0 in range(len(target))
+        for R0 in range(dom_length)
+        if all((k < L0) == (target[k] < R0) for k in range(len(target)))
+    )[1:]
+
+def concat[T, Y=T](xss: Iterable[Iterable[T]], func: Callable[[T], Y] = lambda x: x):
+    return tuple(
+        func(x)
+        for xs in xss
+        for x in xs
+    )
+
+def intersection[T](xs: Iterable[T], ys: Iterable[T]) -> Prod[T]:
+    set_ys = set(ys)
+    return tuple(x for x in xs if x in set_ys)
+
+def predicate_partition[T](xs: Iterable[T], predicate: Callable[[T], bool]) -> tuple[Prod[T], Prod[T]]:
+    true_part: list[T] = []
+    false_part: list[T] = []
+    for x in xs:
+        (true_part if predicate(x) else false_part).append(x)
+    return tuple(true_part), tuple(false_part)

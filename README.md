@@ -16,7 +16,7 @@ attention_core = qk_matmul @ softmax @ mask @ sv_matmul
 
 ## Description
 
-This is a package for formally expressing deep learning models based on [Neural Circuit Diagrams](https://openreview.net/forum?id=RyZB4qXEgt), [FlashAttention on a Napkin](https://openreview.net/forum?id=pF2ukh7HxA) and [Spherical Attention](https://arxiv.org/abs/2505.09326). The main goal of this package is to provide a simple and intuitive way to define and visualize deep learning models, while also allowing for formal reasoning about their properties. In `data_structure`, you will find a high-level implementation of the structural aspects of deep learning models.
+This is a package for formally expressing deep learning models based on [Neural Circuit Diagrams](https://openreview.net/forum?id=RyZB4qXEgt), [FlashAttention on a Napkin](https://openreview.net/forum?id=pF2ukh7HxA), [Spherical Attention](https://arxiv.org/abs/2505.09326) and a [GPU Mode presentation](https://www.youtube.com/watch?v=hAoY2bpRIKg). The main goal of this package is to provide a simple and intuitive way to define and visualize deep learning models, while also allowing for formal reasoning about their properties. In `data_structure`, you will find a high-level implementation of the structural aspects of deep learning models.
 
 The other folders provide utilities. These are;
 
@@ -32,7 +32,7 @@ These utilities build on the core data structure. They feed into a "web" of tool
 ![alt text](_guide/figures/the_web_tsncd.png)
 
  ## The Structure
- We implement mathematical expressions with `Term`s. We keep everything in a high-level structure, and leave evaluation to specific tools such as the torch compiler or diagramming mechanism. Deep learning models and their components are morphisms in the `BroadcastedCategory`. (Product) Categories are compositional structures that allow for components called **morphisms** to be sequentially **composed** and placed into parallel **products**, forming new morphisms. Composition is anchored by **objects**. We also have a special morphism to **rearrange** objects in a product.
+ We implement mathematical expressions with `Term`s. We keep everything in a high-level structure, and leave evaluation to specific tools such as the Torch compiler or TypeScript diagramming. Deep learning models and their components are morphisms in the `BroadcastedCategory`. (Product) Categories are compositional structures that allow for components called **morphisms** to be sequentially **composed** and placed into parallel **products**, forming new morphisms. Composition is anchored by **objects**. We also have a special morphism to **rearrange** objects in a product.
  
  The structure of a deep learning model consists of these constructed terms ultimately referencing seed morphisms. In the case of the `BroadcastedCategory`, representing deep learning models, the seed morphisms are single, broadcasted operations called `Broadcasted`, and the objects are `Array`s.
 

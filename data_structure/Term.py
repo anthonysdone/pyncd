@@ -184,6 +184,10 @@ class UID[T:Term](Term):
                 return False
             case DynamicName(), DynamicName():
                 return self._name < other._name
+    
+    @classmethod
+    def field(cls, _type: Type[T]):
+        return field(default_factory=lambda: cls(_type))
 
 @dataclass(frozen=True)
 class UTerm(Term, ABC):
@@ -198,10 +202,10 @@ Term Utilities
 
 type GeneralTerm = Term | Prod[GeneralTerm]
 @overload
-def deep_iterate[T](target: T, func: Callable[[T], T]) -> T: ...
+def deep_reconstruct[T](target: T, func: Callable[[T], T]) -> T: ...
 @overload
-def deep_iterate[T](target: Prod[T], func: Callable[[T], T]) -> Prod[T]: ...
-def deep_iterate(target, func):
+def deep_reconstruct[T](target: Prod[T], func: Callable[[T], T]) -> Prod[T]: ...
+def deep_reconstruct(target, func):
     match target:
         case Term():
             return type(target)(**{
@@ -212,10 +216,14 @@ def deep_iterate(target, func):
             return tuple(func(item) for item in target)
         case _:
             return target
+            
         
 '''
 Term Equalization Mechanisms
 '''
+
+class UIDEquipped(Protocol):
+    uid: UID
 @dataclass
 class EqualityClass[T:UTerm]:
     _type: Type[T]
@@ -226,7 +234,7 @@ class EqualityClass[T:UTerm]:
         match target:
             case Term(uid=UID() as uid) if uid in self.bucket:
                 return self.canonical  # type: ignore
-        return deep_iterate(target, self.apply) if iterate else target
+        return deep_reconstruct(target, self.apply) if iterate else target
     
     @classmethod
     def from_iter(cls, target: Iterable[T]) -> EqualityClass[T]:
@@ -264,7 +272,7 @@ class Context:
             case Term(uid=UID()):
                 for eq_class in self.equality_classes:
                     target = eq_class.apply(target, iterate=False)
-        return deep_iterate(target, self.apply)
+        return deep_reconstruct(target, self.apply)
     
     def append_iter[T: UTerm](self, target: Iterable[T]) -> None:
         new_eq_class = EqualityClass.from_iter(target)
@@ -290,3 +298,7 @@ class Context:
         for i in reversed(to_del):
             del self.equality_classes[i]
         self.equality_classes.append(new_eq_class)
+
+    def append_buckets[T: UTerm](self, buckets: Iterable[EqualityClass[T]]) -> None:
+        for bucket in buckets:
+            self.append_bucket(bucket)
