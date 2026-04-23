@@ -298,3 +298,28 @@ class _LinearTriton(TritonOperator, operation_key=ops.Linear):
             params=params,
             body=body,
         ).render()
+
+
+class _EmbeddingTriton(TritonOperator, operation_key=ops.Embedding):
+    def emit(self, target: cat.Broadcasted) -> str:
+        body = (
+            "\n    token_idx = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 256"
+            "\n    col_offsets = tl.arange(0, BLOCK)"
+            "\n    mask = col_offsets < n_cols"
+            "\n    idx = tl.load(idx_ptr + token_idx)"
+            "\n    emb_row_start = idx * n_cols"
+            "\n    emb = tl.load(table_ptr + emb_row_start + col_offsets, mask=mask)"
+            "\n    out_row_start = token_idx * n_cols"
+            "\n    tl.store(y_ptr + out_row_start + col_offsets, emb, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name="_embedding_kernel",
+            params=[
+                codegen.Param("idx_ptr", "pointer"),
+                codegen.Param("table_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("n_cols", "i32"),
+            ],
+            body=body,
+        ).render()
