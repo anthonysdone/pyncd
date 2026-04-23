@@ -64,6 +64,8 @@ def _dispatch_broadcast(
         return _launch_softmax(kernel, xs[0])
     if op_type is ops.WeightedTriangularLower:
         return _launch_wtril(kernel, xs[0])
+    if op_type is ops.Einops:
+        return _launch_einops(term, kernel, xs)
     raise NotImplementedError(
         f"Stage A launcher: no dispatch for {op_type.__name__}"
     )
@@ -101,3 +103,30 @@ def _launch_wtril(kernel: Any, x: torch.Tensor) -> torch.Tensor:
     rows, n_cols = x_flat.shape
     kernel[(rows,)](x_flat, y_flat, n_cols)
     return y_flat.reshape(x.shape)
+
+
+def _launch_einops(
+    term: cat.Broadcasted,
+    kernel: Any,
+    xs: tuple[torch.Tensor, ...],
+) -> torch.Tensor:
+    # Stage A: flatten-and-permute fallback for contraction.
+    # TODO(Stage B): replace with weave-aware Triton matmul for non-trivial signatures.
+    if len(xs) == 2 and _has_contraction_einops(term.operator):
+        a, b = xs
+        import einops as einops_pkg
+        target_sig = _einops_signature_str(term.operator)
+        y = einops_pkg.einsum(a, b, target_sig)
+        return y
+    # Non-contraction: fall back to einops.einsum for permutation.
+    import einops as einops_pkg
+    target_sig = _einops_signature_str(term.operator)
+    return einops_pkg.einsum(*xs, target_sig)
+
+
+def _has_contraction_einops(op: ops.Einops) -> bool:
+    return len(op.signature) > 1
+
+
+def _einops_signature_str(op: ops.Einops) -> str:
+    return op.name.body if op.name is not None else ""
