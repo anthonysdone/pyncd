@@ -60,6 +60,8 @@ def _collect(term: cat.Morphism, out: list[cat.Broadcasted]) -> None:
             _collect(term.body, out)
         case cat.Broadcasted():
             out.append(term)
+        case _:
+            raise NotImplementedError(f"Unhandled term type in _collect: {type(term).__name__}")
 
 
 _KERNEL_NAME_RE = re.compile(r"^def (_[a-z_]+_kernel)\(", re.MULTILINE)
