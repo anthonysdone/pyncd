@@ -26,3 +26,51 @@ class TritonOperator(ABC):
     @abstractmethod
     def emit(self, target: cat.Broadcasted) -> str:
         """Return Triton source for a single broadcasted-operator kernel."""
+
+
+import data_structure.Operators as ops
+from triton_compile import codegen
+
+
+_ELEMENTWISE_OP: dict[type, str] = {
+    ops.ReLU: "tl.maximum(x, 0.0)",
+    ops.Elementwise: "tl.sigmoid(x)",
+    ops.Dropout: "x",  # Stage A: no-op; dropout needs RNG state (deferred).
+    ops.Identity: "x",
+}
+
+
+class _ElementwiseTriton(TritonOperator, operation_key=ops.Elementwise):
+    def emit(self, target: cat.Broadcasted) -> str:
+        op_type = type(target.operator)
+        expr = _ELEMENTWISE_OP.get(op_type, "x")
+        name = f"_elementwise_{op_type.__name__.lower()}_kernel"
+        body = (
+            "\n    pid = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 1024"
+            "\n    offsets = pid * BLOCK + tl.arange(0, BLOCK)"
+            "\n    mask = offsets < n_elements"
+            "\n    x = tl.load(x_ptr + offsets, mask=mask)"
+            f"\n    tl.store(y_ptr + offsets, {expr}, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name=name,
+            params=[
+                codegen.Param("x_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("n_elements", "i32"),
+            ],
+            body=body,
+        ).render()
+
+
+class _ReLUTriton(_ElementwiseTriton, operation_key=ops.ReLU):
+    pass
+
+
+class _DropoutTriton(_ElementwiseTriton, operation_key=ops.Dropout):
+    pass
+
+
+class _IdentityTriton(_ElementwiseTriton, operation_key=ops.Identity):
+    pass
