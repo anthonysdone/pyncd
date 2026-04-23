@@ -194,3 +194,28 @@ class _SoftMaxTriton(TritonOperator, operation_key=ops.SoftMax):
             ],
             body=body,
         ).render()
+
+
+class _WTrilTriton(TritonOperator, operation_key=ops.WeightedTriangularLower):
+    def emit(self, target: cat.Broadcasted) -> str:
+        body = (
+            "\n    row_idx = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 1024"
+            "\n    col_offsets = tl.arange(0, BLOCK)"
+            "\n    mask = col_offsets < n_cols"
+            "\n    row_start = row_idx * n_cols"
+            "\n    x = tl.load(x_ptr + row_start + col_offsets, mask=mask, other=0.0)"
+            "\n    tril_mask = col_offsets <= row_idx"
+            "\n    x_masked = tl.where(tril_mask & mask, x, 0.0)"
+            "\n    denom = tl.sum(x_masked, axis=0) + 1e-8"
+            "\n    tl.store(y_ptr + row_start + col_offsets, x_masked / denom, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name="_wtril_kernel",
+            params=[
+                codegen.Param("x_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("n_cols", "i32"),
+            ],
+            body=body,
+        ).render()
