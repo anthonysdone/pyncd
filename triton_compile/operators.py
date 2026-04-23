@@ -169,3 +169,28 @@ class _EinopsTriton(TritonOperator, operation_key=ops.Einops):
         if _has_contraction(op):
             return _emit_einops_matmul(target)
         return _emit_einops_rearrange(target)
+
+
+class _SoftMaxTriton(TritonOperator, operation_key=ops.SoftMax):
+    def emit(self, target: cat.Broadcasted) -> str:
+        body = (
+            "\n    row_idx = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 1024"
+            "\n    col_offsets = tl.arange(0, BLOCK)"
+            "\n    mask = col_offsets < n_cols"
+            "\n    row_start = row_idx * n_cols"
+            "\n    x = tl.load(x_ptr + row_start + col_offsets, mask=mask, other=-float('inf'))"
+            "\n    x_max = tl.max(x, axis=0)"
+            "\n    numerator = tl.exp(x - x_max)"
+            "\n    denominator = tl.sum(numerator, axis=0)"
+            "\n    tl.store(y_ptr + row_start + col_offsets, numerator / denominator, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name="_softmax_kernel",
+            params=[
+                codegen.Param("x_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("n_cols", "i32"),
+            ],
+            body=body,
+        ).render()
