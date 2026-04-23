@@ -41,3 +41,8 @@ from dataclasses import dataclass
 class CompiledTerm:
     term: cat.Morphism
     kernel_sources: tuple[str, ...]
+
+    def to_module(self) -> "TritonModule":
+        from triton_compile.runtime import TritonModule
+
+        return TritonModule(self.term, self.kernel_sources)
