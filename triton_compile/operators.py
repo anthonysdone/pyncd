@@ -74,3 +74,26 @@ class _DropoutTriton(_ElementwiseTriton, operation_key=ops.Dropout):
 
 class _IdentityTriton(_ElementwiseTriton, operation_key=ops.Identity):
     pass
+
+
+class _AdditionTriton(TritonOperator, operation_key=ops.AdditionOp):
+    def emit(self, target: cat.Broadcasted) -> str:
+        body = (
+            "\n    pid = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 1024"
+            "\n    offsets = pid * BLOCK + tl.arange(0, BLOCK)"
+            "\n    mask = offsets < n_elements"
+            "\n    x0 = tl.load(x0_ptr + offsets, mask=mask)"
+            "\n    x1 = tl.load(x1_ptr + offsets, mask=mask)"
+            "\n    tl.store(y_ptr + offsets, x0 + x1, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name="_addition_kernel",
+            params=[
+                codegen.Param("x0_ptr", "pointer"),
+                codegen.Param("x1_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("n_elements", "i32"),
+            ],
+            body=body,
+        ).render()
