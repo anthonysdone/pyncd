@@ -1,3 +1,5 @@
 from __future__ import annotations
 
-__all__: list[str] = []
+from triton_compile.triton_compile import compile, CompiledTerm
+
+__all__ = ["compile", "CompiledTerm"]
