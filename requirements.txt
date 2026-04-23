@@ -1,2 +1,4 @@
 ipykernel
 websockets
+triton>=3.0
+pytest>=8.0
