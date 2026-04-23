@@ -100,9 +100,8 @@ class _AdditionTriton(TritonOperator, operation_key=ops.AdditionOp):
 
 
 def _has_contraction(op: ops.Einops) -> bool:
-    # A contraction occurs in multi-input operations where axes are shared/reduced.
-    # Single-input operations (len(signature) == 1) are rearrangements with no contraction.
-    # Multi-input operations with shared axes (non-empty intersection) have contractions.
+    # pyncd encodes each input as a separate signature segment; multi-input → contraction.
+    # Single-input reductions (e.g. 'a b ->') have len==1 and are out of scope for Stage A.
     return len(op.signature) > 1
 
 

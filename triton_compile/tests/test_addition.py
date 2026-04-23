@@ -15,4 +15,4 @@ def test_addition_emits_valid_triton() -> None:
     ast.parse(src)
     assert "tl.load(x0_ptr" in src
     assert "tl.load(x1_ptr" in src
-    assert " + " in src
+    assert "x0 + x1" in src
