@@ -249,3 +249,52 @@ class _NormalizeTriton(TritonOperator, operation_key=ops.Normalize):
             ],
             body=body,
         ).render()
+
+
+class _LinearTriton(TritonOperator, operation_key=ops.Linear):
+    def emit(self, target: cat.Broadcasted) -> str:
+        has_bias = bool(getattr(target.operator, "bias", False))
+        params: list[codegen.Param] = [
+            codegen.Param("x_ptr", "pointer"),
+            codegen.Param("w_ptr", "pointer"),
+        ]
+        if has_bias:
+            params.append(codegen.Param("bias_ptr", "pointer"))
+        params.extend([
+            codegen.Param("y_ptr", "pointer"),
+            codegen.Param("M", "i32"),
+            codegen.Param("N", "i32"),
+            codegen.Param("K", "i32"),
+        ])
+        bias_load = (
+            "\n        b = tl.load(bias_ptr + offs_n, mask=offs_n < N, other=0.0)"
+            "\n        acc += b[None, :]"
+        ) if has_bias else ""
+        body = (
+            "\n    pid_m = tl.program_id(0)"
+            "\n    pid_n = tl.program_id(1)"
+            "\n    BLOCK_M: tl.constexpr = 64"
+            "\n    BLOCK_N: tl.constexpr = 64"
+            "\n    BLOCK_K: tl.constexpr = 32"
+            "\n    offs_m = pid_m * BLOCK_M + tl.arange(0, BLOCK_M)"
+            "\n    offs_n = pid_n * BLOCK_N + tl.arange(0, BLOCK_N)"
+            "\n    offs_k = tl.arange(0, BLOCK_K)"
+            "\n    acc = tl.zeros((BLOCK_M, BLOCK_N), dtype=tl.float32)"
+            "\n    for k in range(0, K, BLOCK_K):"
+            "\n        x_ptrs = x_ptr + (offs_m[:, None] * K + (k + offs_k)[None, :])"
+            "\n        w_ptrs = w_ptr + ((k + offs_k)[:, None] * N + offs_n[None, :])"
+            "\n        x_mask = (offs_m[:, None] < M) & ((k + offs_k)[None, :] < K)"
+            "\n        w_mask = ((k + offs_k)[:, None] < K) & (offs_n[None, :] < N)"
+            "\n        x = tl.load(x_ptrs, mask=x_mask, other=0.0)"
+            "\n        w = tl.load(w_ptrs, mask=w_mask, other=0.0)"
+            "\n        acc += tl.dot(x, w)"
+            f"{bias_load}"
+            "\n    y_ptrs = y_ptr + (offs_m[:, None] * N + offs_n[None, :])"
+            "\n    y_mask = (offs_m[:, None] < M) & (offs_n[None, :] < N)"
+            "\n    tl.store(y_ptrs, acc, mask=y_mask)"
+        )
+        return codegen.KernelSource(
+            name="_linear_kernel",
+            params=params,
+            body=body,
+        ).render()
