@@ -218,3 +218,34 @@ class _WTrilTriton(TritonOperator, operation_key=ops.WeightedTriangularLower):
             ],
             body=body,
         ).render()
+
+
+class _NormalizeTriton(TritonOperator, operation_key=ops.Normalize):
+    def emit(self, target: cat.Broadcasted) -> str:
+        body = (
+            "\n    row_idx = tl.program_id(0)"
+            "\n    BLOCK: tl.constexpr = 1024"
+            "\n    col_offsets = tl.arange(0, BLOCK)"
+            "\n    mask = col_offsets < n_cols"
+            "\n    row_start = row_idx * n_cols"
+            "\n    x = tl.load(x_ptr + row_start + col_offsets, mask=mask, other=0.0)"
+            "\n    mean = tl.sum(x, axis=0) / n_cols"
+            "\n    x_centered = tl.where(mask, x - mean, 0.0)"
+            "\n    var = tl.sum(x_centered * x_centered, axis=0) / n_cols"
+            "\n    rstd = tl.rsqrt(var + 1e-5)"
+            "\n    gamma = tl.load(weight_ptr + col_offsets, mask=mask, other=1.0)"
+            "\n    beta = tl.load(bias_ptr + col_offsets, mask=mask, other=0.0)"
+            "\n    y = x_centered * rstd * gamma + beta"
+            "\n    tl.store(y_ptr + row_start + col_offsets, y, mask=mask)"
+        )
+        return codegen.KernelSource(
+            name="_normalize_kernel",
+            params=[
+                codegen.Param("x_ptr", "pointer"),
+                codegen.Param("y_ptr", "pointer"),
+                codegen.Param("weight_ptr", "pointer"),
+                codegen.Param("bias_ptr", "pointer"),
+                codegen.Param("n_cols", "i32"),
+            ],
+            body=body,
+        ).render()
